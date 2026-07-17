@@ -22,11 +22,9 @@ FPGS redesigns the reconstruction backend of Free-SurGS by removing optical-flow
 
 External camera poses and camera intrinsics are treated as fixed inputs. A first-frame depth prior is used only for Gaussian initialization, while subsequent mapping is optimized using RGB photometric supervision.
 
-<!--
 <p align="center">
   <img src="assets/overview.png" width="100%">
 </p>
--->
 
 ---
 
