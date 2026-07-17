@@ -49,6 +49,12 @@ FPGS reformulates the original joint tracking-and-mapping pipeline as a fixed-ge
 
 ---
 
+## Dataset
+
+Experiments are conducted on the public SCARED dataset.
+
+---
+
 ## Visualization
 
 ### Reconstructed Gaussian Scene
@@ -73,13 +79,11 @@ FPGS reformulates the original joint tracking-and-mapping pipeline as a fixed-ge
 
 #### Reconstruction Example I
 
-https://github.com/user-attachments/assets/e0b408ec-43e0-4ede-887d-311f3d7ccb68
+https://github.com/user-attachments/assets/39f74bfa-a74e-49d3-94a1-27824d1ba9e5
 
 #### Reconstruction Example II
 
-https://github.com/user-attachments/assets/39f74bfa-a74e-49d3-94a1-27824d1ba9e5
-
-
+https://github.com/user-attachments/assets/e0b408ec-43e0-4ede-887d-311f3d7ccb68
 
 ---
 
