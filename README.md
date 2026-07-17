@@ -51,20 +51,30 @@ FPGS reformulates the original joint tracking-and-mapping pipeline as a fixed-ge
 
 ## Visualization
 
+### Reconstructed Gaussian Scene
+
+<p align="center">
+  <img src="assets/teaser.png" width="85%">
+</p>
+
+<p align="center">
+  Reconstructed Gaussian scene under fixed external camera geometry.
+</p>
+
+### Reconstruction Results
+
+<p align="center">
+  <img src="assets/reconstruction_s01.png" width="32%">
+  <img src="assets/reconstruction_s03.png" width="32%">
+  <img src="assets/reconstruction_s06.png" width="32%">
+</p>
+
 ### Gaussian Mapping Progress
 
 The following video visualizes the reconstructed Gaussian representation at different optimization stages.
 
 <!--
 VIDEO_LINK_HERE
--->
-
-### Reconstruction Results
-
-<!--
-<p align="center">
-  <img src="assets/comparison.png" width="100%">
-</p>
 -->
 
 ---
@@ -81,3 +91,4 @@ conda create -n fpgs python=3.10
 conda activate fpgs
 
 pip install -r requirements.txt
+```
