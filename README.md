@@ -71,21 +71,15 @@ FPGS reformulates the original joint tracking-and-mapping pipeline as a fixed-ge
 
 ### Reconstruction Videos
 
-#### Scene 01
+#### Reconstruction Example I
 
-https://github.com/user-attachments/assets/a4b74925-0acc-494a-a176-ff0590f2f8a7
+https://github.com/user-attachments/assets/e0b408ec-43e0-4ede-887d-311f3d7ccb68
 
-#### Scene 09
+#### Reconstruction Example II
 
-https://github.com/user-attachments/assets/0bdf6b0d-55da-4b8a-b5a9-39bea1f08968
+https://github.com/user-attachments/assets/39f74bfa-a74e-49d3-94a1-27824d1ba9e5
 
-### Gaussian Mapping Progress
 
-The following video visualizes the reconstructed Gaussian representation at different optimization stages.
-
-<!--
-VIDEO_LINK_HERE
--->
 
 ---
 
