@@ -4,12 +4,7 @@
 
 ### Flow-Free 3D Gaussian Mapping for Endoscopic Surgical Scene Reconstruction
 
-[Author 1](#)<sup>1</sup>,
-[Author 2](#)<sup>1</sup>,
-[Author 3](#)<sup>2</sup>
 
-<sup>1</sup>Affiliation 1  
-<sup>2</sup>Affiliation 2
 
 [Paper (Coming Soon)](#) |
 [Project Page (Coming Soon)](#) |
