@@ -228,11 +228,6 @@ a.pill:hover {
 }
 
 /* Paper button when the manuscript is not public */
-.disabled-button {
-  cursor: default;
-  user-select: none;
-  pointer-events: none;
-}
 
 /* ================================
    Sections
