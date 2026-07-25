@@ -6,6 +6,10 @@
   --line: #dfe4ea;
 }
 
+/* ================================
+   Global
+   ================================ */
+
 * {
   box-sizing: border-box;
 }
@@ -38,11 +42,11 @@ a {
 }
 
 /* ================================
-   Paper header
+   Paper Header
    ================================ */
 
 .paper-header {
-  padding: 34px 30px 30px;
+  padding: 34px 24px 30px;
   text-align: center;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
@@ -53,16 +57,39 @@ a {
   margin: 0 auto;
 }
 
-.hero-content h1 {
+/*
+   Desktop title:
+   exactly two lines according to the two spans in index.html
+*/
+.paper-title {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1380px;
   margin: 0 auto 20px;
   color: #101010;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 2.45vw, 38px);
+  font-size: clamp(29px, 2.35vw, 36px);
   font-weight: 700;
   line-height: 1.18;
-  letter-spacing: -0.35px;
+  letter-spacing: -0.3px;
+  text-align: center;
+}
+
+.paper-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Fallback in case h1 does not yet use paper-title */
+.hero-content h1 {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto 20px;
+  color: #101010;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(29px, 2.35vw, 36px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.3px;
   text-align: center;
 }
 
@@ -71,7 +98,12 @@ a {
   white-space: nowrap;
 }
 
+/* ================================
+   Authors
+   ================================ */
+
 .authors {
+  max-width: 1100px;
   margin: 0 auto 12px;
   color: #111111;
   font-size: 17px;
@@ -81,10 +113,15 @@ a {
 
 .author-row {
   min-height: 26px;
+  margin: 1px 0;
 }
 
 .author-name {
   white-space: nowrap;
+}
+
+.authors em {
+  font-style: italic;
 }
 
 .authors sup,
@@ -96,10 +133,7 @@ a {
   line-height: 0;
 }
 
-.authors em {
-  font-style: italic;
-}
-
+/* Green author badge */
 .orcid-badge {
   display: inline-flex;
   align-items: center;
@@ -107,9 +141,9 @@ a {
   width: 15px;
   height: 15px;
   margin: 0 3px 0 4px;
-  border-radius: 50%;
   color: #ffffff;
   background: #a6ce39;
+  border-radius: 50%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 8px;
   font-weight: 700;
@@ -117,8 +151,12 @@ a {
   vertical-align: 1px;
 }
 
+/* ================================
+   Affiliations
+   ================================ */
+
 .affiliations {
-  max-width: 1050px;
+  max-width: 1080px;
   margin: 0 auto 15px;
   color: #111111;
   font-size: 16px;
@@ -126,6 +164,7 @@ a {
   text-align: center;
 }
 
+.affiliation-row,
 .affiliations > div {
   margin: 2px 0;
 }
@@ -136,12 +175,17 @@ a {
   white-space: nowrap;
 }
 
+/* ================================
+   Header Buttons
+   ================================ */
+
 .links {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
-  margin-top: 13px;
+  margin-top: 14px;
 }
 
 .pill {
@@ -154,11 +198,14 @@ a {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
+  line-height: 1.2;
   text-decoration: none;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
 }
 
-.pill:hover {
+a.pill:hover {
   transform: translateY(-1px);
   opacity: 0.92;
 }
@@ -178,6 +225,13 @@ a {
 .button-icon {
   margin-right: 7px;
   font-size: 12px;
+}
+
+/* Paper button when the manuscript is not public */
+.disabled-button {
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
 }
 
 /* ================================
@@ -240,7 +294,7 @@ p {
 .main-figure figcaption {
   margin-top: 9px;
   color: var(--muted);
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.82rem;
   line-height: 1.45;
 }
@@ -325,7 +379,7 @@ p {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.88rem;
 }
 
@@ -373,14 +427,14 @@ thead th {
 
 .metrics strong {
   display: block;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
 }
 
 .metrics span {
   display: block;
   color: #27354a;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
 }
 
@@ -388,11 +442,11 @@ thead th {
   display: block;
   margin-top: 4px;
   color: var(--blue);
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* ================================
-   Footer
+   Funding and Footer
    ================================ */
 
 .funding p {
@@ -404,14 +458,26 @@ footer {
   color: #58606b;
   background: #f7f8fa;
   border-top: 1px solid var(--line);
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.82rem;
   text-align: center;
 }
 
 /* ================================
-   Responsive
+   Tablet
    ================================ */
+
+@media (max-width: 1000px) {
+  .paper-title,
+  .hero-content h1 {
+    font-size: 29px;
+  }
+
+  .paper-title span,
+  .hero-content h1 span {
+    white-space: normal;
+  }
+}
 
 @media (max-width: 850px) {
   body {
@@ -423,10 +489,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .hero-content h1 {
-    font-size: 31px;
-  }
-
   .authors {
     font-size: 15px;
   }
@@ -435,6 +497,10 @@ footer {
     font-size: 14px;
   }
 }
+
+/* ================================
+   Mobile
+   ================================ */
 
 @media (max-width: 600px) {
   .container,
@@ -446,24 +512,34 @@ footer {
     padding: 25px 12px 22px;
   }
 
+  .paper-title,
   .hero-content h1 {
-    font-size: 26px;
-    line-height: 1.18;
+    font-size: 25px;
+    line-height: 1.2;
   }
 
-.hero-content h1 span {
-  display: block;
-  white-space: normal;
-}
+  .paper-title span,
+  .hero-content h1 span {
+    display: block;
+    white-space: normal;
+  }
 
   .author-row {
-    margin: 3px 0;
+    margin: 4px 0;
+  }
+
+  .author-name {
+    white-space: normal;
   }
 
   .affiliations span {
     display: block;
-    margin: 2px 0;
+    margin: 3px 0;
     white-space: normal;
+  }
+
+  .links {
+    margin-top: 12px;
   }
 
   .section {
