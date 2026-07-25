@@ -4,12 +4,7 @@
   --blue: #246ee9;
   --light: #f3f6fa;
   --line: #dfe4ea;
-  --card: #ffffff;
 }
-
-/* ================================
-   Global
-   ================================ */
 
 * {
   box-sizing: border-box;
@@ -39,111 +34,129 @@ a {
 
 .container.narrow {
   width: min(920px, calc(100% - 40px));
+  margin: 0 auto;
 }
 
 /* ================================
-   Academic header
+   Paper header
    ================================ */
 
 .paper-header {
-  padding: 42px 0 34px;
+  padding: 32px 20px 28px;
   text-align: center;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
 }
 
 .hero-content {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1120px, 100%);
   margin: 0 auto;
 }
 
 .hero-content h1 {
-  max-width: 1100px;
-  margin: 0 auto 20px;
-  color: #111111;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 3.1vw, 47px);
+  max-width: 1020px;
+  margin: 0 auto 18px;
+  color: #101010;
+  font-size: clamp(30px, 2.65vw, 42px);
   font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.4px;
+  line-height: 1.14;
+  letter-spacing: -0.35px;
 }
 
 .hero-content h1 span {
-  font-weight: 700;
+  display: block;
 }
 
 .authors {
-  margin: 0 0 7px;
+  margin: 0 auto 12px;
   color: #111111;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.authors a {
-  color: #111111;
-  text-decoration: none;
-}
-
-.authors a:hover {
-  text-decoration: underline;
-}
-
-.authors sup {
-  font-size: 11px;
-  vertical-align: super;
-}
-
-.affiliations {
-  max-width: 1050px;
-  margin: 0 auto 16px;
-  color: #111111;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.55;
   text-align: center;
 }
 
-.affiliations span {
-  display: inline-block;
-  margin: 0 6px;
+.author-row {
+  min-height: 26px;
+}
+
+.author-name {
   white-space: nowrap;
 }
 
+.authors sup,
 .affiliations sup {
-  font-size: 10px;
-  vertical-align: super;
+  position: relative;
+  top: -0.35em;
+  margin-left: 1px;
+  font-size: 0.68em;
+  line-height: 0;
+}
+
+.authors em {
+  font-style: italic;
+}
+
+.orcid-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  margin: 0 3px 0 4px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #a6ce39;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: 1px;
+}
+
+.affiliations {
+  max-width: 1050px;
+  margin: 0 auto 15px;
+  color: #111111;
+  font-size: 16px;
+  line-height: 1.48;
+  text-align: center;
+}
+
+.affiliations > div {
+  margin: 2px 0;
+}
+
+.affiliations span {
+  display: inline-block;
+  margin: 0 8px;
+  white-space: nowrap;
 }
 
 .links {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 12px;
-  margin: 14px 0 0;
+  margin-top: 13px;
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 105px;
+  min-width: 108px;
   padding: 8px 18px;
   border-radius: 999px;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  transition:
-    transform 0.15s ease,
-    opacity 0.15s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .pill:hover {
   transform: translateY(-1px);
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .pill.dark {
@@ -158,15 +171,9 @@ a {
   border: 1px solid #246ee9;
 }
 
-.pill.light {
-  color: #222222;
-  background: #ffffff;
-  border: 1px solid #ccd3dc;
-}
-
-/* 隐藏旧版首页提示文字 */
-.note {
-  display: none;
+.button-icon {
+  margin-right: 7px;
+  font-size: 12px;
 }
 
 /* ================================
@@ -242,7 +249,7 @@ p {
 }
 
 /* ================================
-   Motivation cards
+   Motivation
    ================================ */
 
 .cards {
@@ -381,7 +388,7 @@ thead th {
 }
 
 /* ================================
-   Funding and footer
+   Footer
    ================================ */
 
 .funding p {
@@ -413,32 +420,39 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: 2.15rem;
+    font-size: 31px;
+  }
+
+  .authors {
+    font-size: 15px;
+  }
+
+  .affiliations {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 600px) {
   .container,
-  .container.narrow,
-  .hero-content {
+  .container.narrow {
     width: min(100% - 24px, 1120px);
   }
 
   .paper-header {
-    padding: 34px 0 28px;
+    padding: 25px 12px 22px;
   }
 
   .hero-content h1 {
-    font-size: 29px;
-    line-height: 1.2;
+    font-size: 26px;
+    line-height: 1.18;
   }
 
-  .authors {
-    font-size: 16px;
+  .hero-content h1 span {
+    display: inline;
   }
 
-  .affiliations {
-    font-size: 14px;
+  .author-row {
+    margin: 3px 0;
   }
 
   .affiliations span {
@@ -455,154 +469,12 @@ footer {
     font-size: 1.65rem;
   }
 
-  .metrics {
-    grid-template-columns: 1fr;
-  }
-
+  .metrics,
   .cards {
     grid-template-columns: 1fr;
   }
 
   p {
     text-align: left;
-  }
-}
-/* ===== Header refinement ===== */
-
-.paper-header {
-  padding: 30px 0 24px;
-  text-align: center;
-  background: #ffffff;
-  border-bottom: 1px solid #e3e6ea;
-}
-
-.hero-content h1 {
-  max-width: 980px;
-  margin: 0 auto 16px;
-  color: #111111;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(28px, 2.7vw, 42px);
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.3px;
-}
-
-.authors {
-  margin: 0 0 8px;
-  color: #111111;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  line-height: 1.55;
-  text-align: center;
-}
-
-.authors sup {
-  font-size: 11px;
-  vertical-align: super;
-}
-
-.name-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  margin: 0 3px 0 4px;
-  border-radius: 50%;
-  background: #a8cf45;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-.ieee-role {
-  font-style: italic;
-}
-
-.affiliations {
-  max-width: 1020px;
-  margin: 0 auto 14px;
-  color: #111111;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.affiliations span {
-  display: inline-block;
-  margin: 0 6px;
-  white-space: nowrap;
-}
-
-.links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 102px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.pill.dark {
-  color: #ffffff;
-  background: #20252d;
-  border: 1px solid #20252d;
-}
-
-.pill.blue {
-  color: #ffffff;
-  background: #246ee9;
-  border: 1px solid #246ee9;
-}
-
-/* 彻底隐藏旧的说明文字 */
-.note {
-  display: none !important;
-}
-
-@media (max-width: 700px) {
-  .paper-header {
-    padding: 24px 0 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 25px;
-    line-height: 1.16;
-  }
-
-  .authors {
-    font-size: 15px;
-  }
-
-  .affiliations {
-    font-size: 13px;
-  }
-
-  .affiliations span {
-    display: block;
-    margin: 2px 0;
-    white-space: normal;
-  }
-
-  .name-badge {
-    width: 14px;
-    height: 14px;
-    font-size: 8px;
   }
 }
