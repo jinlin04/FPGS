@@ -1,7 +1,7 @@
 :root {
   --ink: #151515;
   --muted: #5b6270;
-  --blue: #246ee9;
+  --blue: #2f72e8;
   --light: #f3f6fa;
   --line: #dfe4ea;
 }
@@ -42,11 +42,11 @@ a {
 }
 
 /* =========================================================
-   Paper Header
+   Header
    ========================================================= */
 
 .paper-header {
-  padding: 32px 24px 28px;
+  padding: 30px 24px 28px;
   text-align: center;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
@@ -57,15 +57,10 @@ a {
   margin: 0 auto;
 }
 
-/*
-  Desktop:
-  the two direct child spans correspond to exactly two lines.
-*/
-
 .paper-title {
   width: 100%;
   max-width: 1380px;
-  margin: 0 auto 21px;
+  margin: 0 auto 22px;
   color: #101010;
   font-family: "Times New Roman", Times, serif;
   font-size: clamp(27px, 2.1vw, 34px);
@@ -81,13 +76,8 @@ a {
   white-space: nowrap;
 }
 
-/*
-  3D must stay on the baseline and must not become a block.
-*/
-
 .title-3d {
   display: inline;
-  position: static;
   color: inherit;
   font-family: "Times New Roman", Times, serif;
   font-size: 1em;
@@ -108,7 +98,7 @@ a {
   color: #111111;
   font-family: "Times New Roman", Times, serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.52;
   text-align: center;
 }
 
@@ -125,11 +115,6 @@ a {
   font-style: italic;
 }
 
-/*
-  Fixed-size author superscripts.
-  1, 2,3, 4, 5 and 1* all use the same visual size.
-*/
-
 .authors sup {
   position: static;
   display: inline;
@@ -144,8 +129,6 @@ a {
   white-space: nowrap;
   font-variant-numeric: lining-nums;
 }
-
-/* Green identifier badge */
 
 .orcid-badge {
   display: inline-flex;
@@ -170,11 +153,11 @@ a {
 
 .affiliations {
   max-width: 1080px;
-  margin: 0 auto 14px;
+  margin: 0 auto 15px;
   color: #111111;
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
-  line-height: 1.46;
+  line-height: 1.48;
   text-align: center;
 }
 
@@ -187,11 +170,6 @@ a {
   margin: 0 8px;
   white-space: nowrap;
 }
-
-/*
-  Affiliation superscripts are independent from author
-  superscripts, but use the same fixed 10px size.
-*/
 
 .affiliations sup {
   position: static;
@@ -217,17 +195,16 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 13px;
+  gap: 14px;
+  margin-top: 14px;
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 102px;
-  padding: 8px 17px;
-  color: #ffffff;
+  min-width: 122px;
+  padding: 10px 20px;
   border-radius: 999px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -246,19 +223,29 @@ a.pill:hover {
 
 .pill.dark {
   color: #ffffff;
-  background: #20252d;
-  border: 1px solid #20252d;
+  background: #252c36;
+  border: 1px solid #252c36;
 }
 
 .pill.blue {
   color: #ffffff;
-  background: #246ee9;
-  border: 1px solid #246ee9;
+  background: var(--blue);
+  border: 1px solid var(--blue);
 }
 
 .button-icon {
-  margin-right: 7px;
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+.button-icon svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
 }
 
 /* =========================================================
@@ -283,19 +270,43 @@ h2 {
   margin: 0;
   text-align: center;
   font-size: 2.05rem;
-  line-height: 1.25;
+  line-height: 1.22;
 }
 
 .rule {
   max-width: 960px;
   height: 1px;
-  margin: 18px auto 28px;
+  margin: 18px auto 30px;
   background: var(--line);
 }
 
 p {
   margin: 0 0 16px;
   text-align: justify;
+}
+
+/*
+  Prevent technical abbreviations and values from breaking.
+*/
+
+.technical-term {
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  font-variant-numeric: lining-nums;
+}
+
+/*
+  Unified numeric style for the abstract results.
+*/
+
+.result-number {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: 0;
 }
 
 /* =========================================================
@@ -456,6 +467,7 @@ thead th {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .metrics span {
@@ -470,6 +482,7 @@ thead th {
   margin-top: 4px;
   color: var(--blue);
   font-family: Arial, Helvetica, sans-serif;
+  font-variant-numeric: tabular-nums;
 }
 
 /* =========================================================
@@ -491,7 +504,7 @@ footer {
 }
 
 /* =========================================================
-   Medium Desktop / Tablet
+   Tablet
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -505,7 +518,6 @@ footer {
   }
 
   .title-3d {
-    display: inline;
     white-space: nowrap;
   }
 }
@@ -542,22 +554,16 @@ footer {
   }
 
   .paper-header {
-    padding: 25px 12px 22px;
+    padding: 24px 12px 22px;
   }
 
   .paper-title {
-    font-size: 25px;
+    font-size: 24px;
     line-height: 1.2;
   }
 
   .paper-title > span {
-    display: block;
     white-space: normal;
-  }
-
-  .title-3d {
-    display: inline;
-    white-space: nowrap;
   }
 
   .author-row {
@@ -580,7 +586,13 @@ footer {
   }
 
   .links {
-    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .pill {
+    min-width: 108px;
+    padding: 9px 16px;
+    font-size: 14px;
   }
 
   .section {
