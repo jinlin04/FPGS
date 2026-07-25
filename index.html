@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FPGS: Flow-Free Prior-Guided 3D Gaussian Splatting for Endoscopic Surgical Scene Reconstruction." />
+  <meta property="og:title" content="FPGS: Flow-Free Prior-Guided 3D Gaussian Splatting" />
+  <meta property="og:description" content="A fixed-geometry Gaussian mapping framework for endoscopic surgical scene reconstruction." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/method-overview.webp" />
+  <title>FPGS | Flow-Free Prior-Guided 3D Gaussian Splatting</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top">FPGS</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner shell" id="top">
+      <div class="eyebrow">Endoscopic Scene Reconstruction · 3D Gaussian Splatting</div>
+      <h1><span>FPGS</span>: Flow-Free Prior-Guided<br />3D Gaussian Splatting</h1>
+      <p class="subtitle">for Endoscopic Surgical Scene Reconstruction</p>
+      <div class="authors">
+        <span>Peng Zhang<sup>1</sup></span>
+        <span>Eksan Firkat<sup>2,3</sup></span>
+        <span>Bin Zhu<sup>4</sup></span>
+        <span>Jihong Zhu<sup>5</sup></span>
+        <span>Askar Hamdulla<sup>1*</sup></span>
+      </div>
+      <p class="affiliations">
+        <sup>1</sup>Xinjiang University &nbsp; · &nbsp;
+        <sup>2</sup>Tsinghua SIGS &nbsp; · &nbsp;
+        <sup>3</sup>Great Bay University &nbsp; · &nbsp;
+        <sup>4</sup>Beijing Tsinghua Institute for Frontier Interdisciplinary Innovation &nbsp; · &nbsp;
+        <sup>5</sup>Tsinghua University
+      </p>
+      <div class="actions">
+        <a class="button primary" href="assets/FPGS_paper_draft.pdf" target="_blank" rel="noopener">Paper</a>
+        <a class="button" href="#citation">BibTeX</a>
+        <span class="button disabled" title="Replace this button with the public repository URL after release">Code · Coming soon</span>
+      </div>
+      <p class="status">Manuscript under preparation. Project materials will be updated after release.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section shell" id="overview">
+      <div class="section-heading">
+        <span class="kicker">Motivation</span>
+        <h2>Do we still need flow-driven tracking when stable geometry is already available?</h2>
+      </div>
+      <div class="lead-grid">
+        <div>
+          <p class="lead">FPGS reformulates the coupled tracking-and-mapping pipeline as a fixed-geometry Gaussian mapping backend.</p>
+          <p>External camera poses and intrinsics are estimated upstream and kept fixed during reconstruction. A first-frame depth prior initializes the Gaussian scene; all subsequent mapping is driven only by RGB photometric supervision.</p>
+        </div>
+        <div class="takeaway">
+          <strong>Core design</strong>
+          <ul>
+            <li>No online pose refinement</li>
+            <li>No optical-flow or projection-flow loss</li>
+            <li>No persistent depth supervision</li>
+            <li>Only Gaussian scene parameters are optimized</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="figure-card dark-frame">
+        <img src="assets/images/problem-setting.webp" alt="Comparison between flow-driven reconstruction and FPGS under fixed external geometry" loading="lazy" />
+        <figcaption>Different camera-geometry assumptions: coupled flow-driven tracking versus fixed-prior-guided Gaussian mapping.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section alt" id="method">
+      <div class="shell">
+        <div class="section-heading centered">
+          <span class="kicker">Method</span>
+          <h2>Flow-free, fixed-geometry Gaussian mapping</h2>
+          <p>Tracking and mapping are systematically decoupled. The reconstruction backend receives fixed poses, fixed intrinsics, RGB frames, and a first-frame depth prior.</p>
+        </div>
+        <figure class="figure-card wide">
+          <img src="assets/images/method-overview.webp" alt="Overview of the FPGS pipeline" loading="lazy" />
+          <figcaption>FPGS overview: upstream geometry estimation, first-frame initialization, RGB-only progressive mapping, and global refinement.</figcaption>
+        </figure>
+
+        <div class="steps">
+          <article><span>01</span><h3>External geometry</h3><p>Camera poses and intrinsics are obtained from an upstream geometry module and remain fixed.</p></article>
+          <article><span>02</span><h3>Initialization</h3><p>The first-frame depth prior is back-projected to initialize the Gaussian scene.</p></article>
+          <article><span>03</span><h3>RGB-only mapping</h3><p>Each frame updates Gaussian position, scale, rotation, opacity, and appearance through photometric loss.</p></article>
+          <article><span>04</span><h3>Global refinement</h3><p>Sampled views refine the final scene without reintroducing tracking, flow, or depth supervision.</p></article>
+        </div>
+
+        <figure class="figure-card compact">
+          <img src="assets/images/rgb-mapping.webp" alt="RGB-only Gaussian optimization under fixed camera geometry" loading="lazy" />
+          <figcaption>Only Gaussian attributes are optimized under fixed camera geometry.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section shell" id="results">
+      <div class="section-heading centered">
+        <span class="kicker">Experiments</span>
+        <h2>Quality and efficiency on nine SCARED scenes</h2>
+        <p>All experiments use 640×480 images on a single NVIDIA RTX 3090. Every eighth frame is held out for testing.</p>
+      </div>
+
+      <div class="metrics">
+        <article><strong>27.23</strong><span>PSNR ↑</span><small>+2.62 dB vs. Free-SurGS</small></article>
+        <article><strong>0.789</strong><span>SSIM ↑</span><small>+0.086</small></article>
+        <article><strong>0.190</strong><span>LPIPS ↓</span><small>−0.092</small></article>
+        <article><strong>0.4 h</strong><span>Training time ↓</span><small>−66.7%</small></article>
+        <article><strong>91.26</strong><span>Rendering FPS ↑</span><small>+33.7%</small></article>
+        <article><strong>1.4 GB</strong><span>Peak GPU memory ↓</span><small>−44.0%</small></article>
+      </div>
+
+      <div class="result-grid">
+        <figure class="figure-card"><img src="assets/images/qualitative-main.webp" alt="Qualitative comparison with representative reconstruction methods" loading="lazy" /><figcaption>Qualitative comparison with representative neural rendering and surgical reconstruction methods.</figcaption></figure>
+        <figure class="figure-card"><img src="assets/images/qualitative-freesurgs.webp" alt="Detailed qualitative comparison between Free-SurGS and FPGS" loading="lazy" /><figcaption>Detailed comparison with Free-SurGS. Insets highlight local appearance and structural differences.</figcaption></figure>
+      </div>
+      <figure class="figure-card efficiency">
+        <img src="assets/images/efficiency.webp" alt="Training time, rendering FPS, and GPU memory comparison" loading="lazy" />
+        <figcaption>Scene-wise efficiency comparison with Free-SurGS.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section alt" id="citation">
+      <div class="shell citation-wrap">
+        <div class="section-heading">
+          <span class="kicker">Citation</span>
+          <h2>BibTeX</h2>
+          <p>Update the venue, year, pages, DOI, and public URLs after acceptance or preprint release.</p>
+        </div>
+        <div class="code-card">
+          <button id="copyBib" type="button">Copy</button>
+<pre id="bibtex">@article{zhang2026fpgs,
+  title   = {Flow-Free Prior-Guided 3D Gaussian Splatting for Endoscopic Surgical Scene Reconstruction},
+  author  = {Zhang, Peng and Firkat, Eksan and Zhu, Bin and Zhu, Jihong and Hamdulla, Askar},
+  journal = {Under Review},
+  year    = {2026}
+}</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>FPGS Project Page</span>
+      <span>Built for GitHub Pages · Last updated 2026</span>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>
