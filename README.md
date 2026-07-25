@@ -4,14 +4,13 @@
 Official implementation of FPGS, a flow-free fixed-geometry Gaussian mapping framework for endoscopic surgical scene reconstruction.
 
 
+
 ## Overview
 
 
-Recent surgical 3D Gaussian Splatting methods often jointly optimize camera tracking and Gaussian scene representation.
+FPGS reformulates surgical 3D Gaussian Splatting reconstruction as a fixed-geometry Gaussian mapping framework.
 
-FPGS reformulates this process as a fixed-geometry Gaussian mapping framework. External camera poses and intrinsics are treated as fixed inputs, while Gaussian parameters are optimized using RGB photometric supervision.
-
-The first-frame depth prior is only used for Gaussian initialization. After initialization, reconstruction is performed using RGB-only Gaussian optimization without optical-flow-based tracking.
+Unlike joint tracking-and-mapping pipelines, FPGS treats external camera geometry as fixed inputs. A first-frame depth prior is only used for Gaussian initialization, while subsequent reconstruction is performed using RGB-only Gaussian optimization.
 
 
 <p align="center">
@@ -20,32 +19,18 @@ The first-frame depth prior is only used for Gaussian initialization. After init
 
 
 
-## Highlights
-
-
-- Flow-free Gaussian mapping under fixed external camera geometry.
-
-- Decoupled camera tracking from Gaussian scene optimization.
-
-- First-frame depth prior used only for Gaussian initialization.
-
-- RGB-only optimization during subsequent reconstruction.
-
-
-
 ## Installation
 
 
-Our implementation is tested with:
+Our code is tested on:
 
 - Ubuntu 22.04
 - Python 3.10
 - PyTorch 2.x
 - CUDA 11.x / 12.x
-- NVIDIA GPU
 
 
-Create the environment:
+Create the environment and install dependencies:
 
 
 ```bash
@@ -58,7 +43,7 @@ pip install -r requirements.txt
 
 
 
-## Dataset Preparation
+## Dataset
 
 
 We evaluate FPGS on the SCARED dataset.
@@ -84,79 +69,42 @@ dataset/
 ```
 
 
-External camera poses and intrinsics are obtained from an upstream geometry module and treated as fixed inputs during reconstruction.
+Camera poses and intrinsics are provided by an upstream geometry module and treated as fixed inputs during reconstruction.
 
 
 
 ## Training
 
 
-To train FPGS, please follow:
+To train FPGS, please use:
 
 
 ```bash
 python train.py \
-    -s /path/to/scared_scene \
-    --model_path ./outputs/scared_scene \
+    -s <path_to_dataset> \
+    --model_path <path_to_output> \
     --visualize True \
     --port 8039 \
     --log True
 ```
 
 
-Example:
-
-
-```bash
-python train.py \
-    -s /path/to/scared_s01 \
-    --model_path ./outputs/scared_s01 \
-    --visualize True \
-    --port 8039 \
-    --log True
-```
-
-
-After training, checkpoints and rendered views are saved in:
-
-
-```text
-./outputs/
-```
-
-
-During reconstruction:
-
-- Camera tracking optimization is disabled.
-- External camera poses remain fixed.
-- Gaussian parameters are optimized using RGB photometric loss.
+After training, the checkpoints and rendered results will be saved in the specified output directory.
 
 
 
 ## Evaluation
 
 
-To evaluate reconstruction results:
+To evaluate a trained model:
 
 
 ```bash
 python train.py \
-    -s /path/to/scared_scene \
-    --model_path ./outputs/scared_scene \
+    -s <path_to_dataset> \
+    --model_path <path_to_output> \
     --test True \
-    --start_checkpoint ./outputs/scared_scene/chkpnt29999.pth
-```
-
-
-Example:
-
-
-```bash
-python train.py \
-    -s /path/to/scared_s09 \
-    --model_path ./outputs/scared_s09 \
-    --test True \
-    --start_checkpoint ./outputs/scared_s09/chkpnt29999.pth
+    --start_checkpoint <path_to_checkpoint>
 ```
 
 
@@ -171,40 +119,14 @@ The efficiency is evaluated using:
 
 - Rendering FPS
 - Training time
-- Peak GPU memory consumption
-
-
-
-## Qualitative Results
-
-
-<p align="center">
-<img src="assets/images/qualitative-main.webp" width="95%">
-</p>
-
-
-Comparison with Free-SurGS:
-
-
-<p align="center">
-<img src="assets/images/qualitative-freesurgs.webp" width="95%">
-</p>
-
-
-
-## Efficiency Comparison
-
-
-<p align="center">
-<img src="assets/images/efficiency.webp" width="95%">
-</p>
+- GPU memory consumption
 
 
 
 ## Visualization
 
 
-The reconstructed Gaussian scene can be visualized using the provided visualization tools.
+The reconstructed 3D Gaussian scene can be visualized using the provided visualization tools.
 
 
 <p align="center">
@@ -226,27 +148,6 @@ Demo video:
 ## Acknowledgement
 
 
-This project is based on:
-
-- 3D Gaussian Splatting
-- Free-SurGS
-
+This project is based on 3D Gaussian Splatting and Free-SurGS.
 
 We thank the authors for their open-source contributions.
-
-
-
-## Citation
-
-
-If you find this work useful, please cite:
-
-
-```bibtex
-@article{fpgs2026,
-  title={FPGS: Flow-Free Prior-Guided 3D Gaussian Mapping for Endoscopic Surgical Scene Reconstruction},
-  author={},
-  journal={IEEE Transactions on Medical Imaging},
-  year={2026}
-}
-```
