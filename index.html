@@ -299,78 +299,80 @@
 
     <!-- Motivation -->
 
+<!-- Motivation and design rationale -->
+
     <section class="section gray">
-
+    
       <div class="container">
-
-        <h2>Motivation &amp; Design Choice</h2>
-
+    
+        <h2>Motivation &amp; Design Rationale</h2>
+    
         <div class="rule"></div>
-
+    
         <div class="cards">
-
+    
           <article>
-
+    
             <h3>Coupled Tracking and Mapping</h3>
-
+    
             <p>
-              Flow-driven pipelines estimate camera motion inside the
-              reconstruction loop, coupling pose optimization with Gaussian
-              scene optimization.
+              Flow-driven reconstruction estimates camera motion inside the
+              reconstruction loop, coupling online pose optimization with
+              Gaussian scene optimization.
             </p>
-
+    
           </article>
-
+    
           <article>
-
-            <h3>Redundant Geometry Optimization</h3>
-
+    
+            <h3>Stable External Geometry</h3>
+    
             <p>
-              When stable external poses and calibrated intrinsics are
-              already available, repeatedly optimizing camera geometry may
-              be unnecessary.
+              When stable external poses and calibrated intrinsics are available,
+              camera geometry can be treated as a fixed input to the reconstruction
+              backend.
             </p>
-
+    
           </article>
-
+    
           <article>
-
-            <h3>Persistent Auxiliary Supervision</h3>
-
+    
+            <h3>Geometry-Related Supervision</h3>
+    
             <p>
-              Optical flow, projection flow, and depth supervision enlarge
-              the optimization loop and increase memory and preprocessing
-              cost.
+              Optical-flow, projection-flow, and depth-related terms are introduced
+              when camera geometry is jointly refined during reconstruction,
+              increasing the complexity of the optimization loop.
             </p>
-
+    
           </article>
-
+    
           <article>
-
-            <h3>Clinical Engineering Setting</h3>
-
+    
+            <h3>Fixed-Geometry Mapping</h3>
+    
             <p>
-              Robot kinematics, external tracking, or upstream geometry
-              estimation can provide fixed camera geometry to the
-              reconstruction backend.
+              Fixing the camera geometry allows the reconstruction backend to
+              optimize only the Gaussian scene parameters using RGB photometric
+              supervision.
             </p>
-
+    
           </article>
-
+    
         </div>
-
+    
         <div class="statement">
-
+    
           <strong>Research question.</strong>
-
-          When stable external geometry is available, is flow-driven online
-          pose optimization still necessary for the endoscopic
-          <span class="technical-term">3DGS</span> reconstruction backend?
-
+    
+          When stable external geometry is available, does the endoscopic
+          <span class="technical-term">3DGS</span> reconstruction backend still
+          require flow-driven online pose optimization?
+    
         </div>
-
+    
       </div>
-
+    
     </section>
 
 
