@@ -42,29 +42,33 @@ a {
    ================================ */
 
 .paper-header {
-  padding: 32px 20px 28px;
+  padding: 34px 30px 30px;
   text-align: center;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
 }
 
 .hero-content {
-  width: min(1120px, 100%);
+  width: min(1380px, 100%);
   margin: 0 auto;
 }
 
 .hero-content h1 {
-  max-width: 1020px;
-  margin: 0 auto 18px;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto 20px;
   color: #101010;
-  font-size: clamp(30px, 2.65vw, 42px);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 2.45vw, 38px);
   font-weight: 700;
-  line-height: 1.14;
+  line-height: 1.18;
   letter-spacing: -0.35px;
+  text-align: center;
 }
 
 .hero-content h1 span {
   display: block;
+  white-space: nowrap;
 }
 
 .authors {
@@ -447,9 +451,10 @@ footer {
     line-height: 1.18;
   }
 
-  .hero-content h1 span {
-    display: inline;
-  }
+.hero-content h1 span {
+  display: block;
+  white-space: normal;
+}
 
   .author-row {
     margin: 3px 0;
