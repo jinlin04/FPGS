@@ -6,9 +6,9 @@
   --line: #dfe4ea;
 }
 
-/* ================================
+/* =========================================================
    Global
-   ================================ */
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -41,12 +41,12 @@ a {
   margin: 0 auto;
 }
 
-/* ================================
+/* =========================================================
    Paper Header
-   ================================ */
+   ========================================================= */
 
 .paper-header {
-  padding: 34px 24px 30px;
+  padding: 32px 24px 28px;
   text-align: center;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
@@ -58,61 +58,45 @@ a {
 }
 
 /*
-   Desktop title:
-   exactly two lines according to the two spans in index.html
+  Desktop title:
+  The two spans in index.html correspond to exactly two lines.
 */
-.paper-title {
-  width: 100%;
-  max-width: 1380px;
-  margin: 0 auto 20px;
-  color: #101010;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(29px, 2.35vw, 36px);
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.3px;
-  text-align: center;
-}
-
-.paper-title span {
-  display: block;
-  white-space: nowrap;
-}
-
-/* Fallback in case h1 does not yet use paper-title */
+.paper-title,
 .hero-content h1 {
   width: 100%;
   max-width: 1380px;
   margin: 0 auto 20px;
   color: #101010;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(29px, 2.35vw, 36px);
+  font-size: clamp(27px, 2.1vw, 34px);
   font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.3px;
+  line-height: 1.17;
+  letter-spacing: -0.25px;
   text-align: center;
 }
 
+.paper-title span,
 .hero-content h1 span {
   display: block;
   white-space: nowrap;
 }
 
-/* ================================
+/* =========================================================
    Authors
-   ================================ */
+   ========================================================= */
 
 .authors {
   max-width: 1100px;
-  margin: 0 auto 12px;
+  margin: 0 auto 11px;
   color: #111111;
-  font-size: 17px;
-  line-height: 1.55;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.5;
   text-align: center;
 }
 
 .author-row {
-  min-height: 26px;
+  min-height: 24px;
   margin: 1px 0;
 }
 
@@ -124,23 +108,35 @@ a {
   font-style: italic;
 }
 
+/*
+  Fixed-size superscripts.
+  This makes 1, 2,3, 4, 5 and 1* visually consistent.
+*/
 .authors sup,
 .affiliations sup {
   position: relative;
-  top: -0.35em;
-  margin-left: 1px;
-  font-size: 0.68em;
-  line-height: 0;
+  top: -0.42em;
+  display: inline-block;
+  margin-left: 2px;
+  color: #111111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
 }
 
-/* Green author badge */
+/* Green author identifier badge */
+
 .orcid-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 15px;
   height: 15px;
-  margin: 0 3px 0 4px;
+  margin: 0 1px 0 4px;
   color: #ffffff;
   background: #a6ce39;
   border-radius: 50%;
@@ -151,16 +147,17 @@ a {
   vertical-align: 1px;
 }
 
-/* ================================
+/* =========================================================
    Affiliations
-   ================================ */
+   ========================================================= */
 
 .affiliations {
   max-width: 1080px;
-  margin: 0 auto 15px;
+  margin: 0 auto 14px;
   color: #111111;
-  font-size: 16px;
-  line-height: 1.48;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.46;
   text-align: center;
 }
 
@@ -175,9 +172,9 @@ a {
   white-space: nowrap;
 }
 
-/* ================================
+/* =========================================================
    Header Buttons
-   ================================ */
+   ========================================================= */
 
 .links {
   display: flex;
@@ -185,15 +182,15 @@ a {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 14px;
+  margin-top: 13px;
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 108px;
-  padding: 8px 18px;
+  min-width: 102px;
+  padding: 8px 17px;
   border-radius: 999px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -227,11 +224,9 @@ a.pill:hover {
   font-size: 12px;
 }
 
-/* Paper button when the manuscript is not public */
-
-/* ================================
+/* =========================================================
    Sections
-   ================================ */
+   ========================================================= */
 
 .section {
   padding: 58px 0;
@@ -266,9 +261,9 @@ p {
   text-align: justify;
 }
 
-/* ================================
+/* =========================================================
    Figures
-   ================================ */
+   ========================================================= */
 
 .main-figure {
   margin: 30px auto 16px;
@@ -301,9 +296,9 @@ p {
   text-align: center !important;
 }
 
-/* ================================
+/* =========================================================
    Motivation
-   ================================ */
+   ========================================================= */
 
 .cards {
   display: grid;
@@ -339,9 +334,9 @@ p {
   box-shadow: 0 6px 18px rgba(25, 35, 50, 0.05);
 }
 
-/* ================================
+/* =========================================================
    Method
-   ================================ */
+   ========================================================= */
 
 .method-text {
   max-width: 930px;
@@ -399,9 +394,9 @@ thead th {
   font-size: 0.9rem;
 }
 
-/* ================================
+/* =========================================================
    Metrics
-   ================================ */
+   ========================================================= */
 
 .metrics {
   display: grid;
@@ -440,9 +435,9 @@ thead th {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ================================
+/* =========================================================
    Funding and Footer
-   ================================ */
+   ========================================================= */
 
 .funding p {
   text-align: center;
@@ -458,14 +453,14 @@ footer {
   text-align: center;
 }
 
-/* ================================
-   Tablet
-   ================================ */
+/* =========================================================
+   Medium Desktop / Tablet
+   ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .paper-title,
   .hero-content h1 {
-    font-size: 29px;
+    font-size: 27px;
   }
 
   .paper-title span,
@@ -493,9 +488,9 @@ footer {
   }
 }
 
-/* ================================
+/* =========================================================
    Mobile
-   ================================ */
+   ========================================================= */
 
 @media (max-width: 600px) {
   .container,
@@ -525,6 +520,12 @@ footer {
 
   .author-name {
     white-space: normal;
+  }
+
+  .authors sup,
+  .affiliations sup {
+    top: -0.35em;
+    font-size: 10px;
   }
 
   .affiliations span {
