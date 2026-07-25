@@ -49,28 +49,6 @@ pip install -r requirements.txt
 We evaluate FPGS on the SCARED dataset.
 
 
-The required data structure is:
-
-
-```text
-dataset/
-│
-├── input/
-│   └── RGB frames
-│
-├── intrinsics/
-│   └── K.txt
-│
-├── poses/
-│   └── camera poses
-│
-└── depth/
-    └── first-frame depth prior
-```
-
-
-Camera poses and intrinsics are provided by an upstream geometry module and treated as fixed inputs during reconstruction.
-
 
 
 ## Training
@@ -107,19 +85,6 @@ python train.py \
     --start_checkpoint <path_to_checkpoint>
 ```
 
-
-The reconstruction quality is evaluated using:
-
-- PSNR ↑
-- SSIM ↑
-- LPIPS ↓
-
-
-The efficiency is evaluated using:
-
-- Rendering FPS
-- Training time
-- GPU memory consumption
 
 
 
