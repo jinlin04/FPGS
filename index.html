@@ -1,288 +1,669 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FPGS: Flow-Free Prior-Guided 3D Gaussian Splatting for Endoscopic Surgical Scene Reconstruction.">
-  <meta property="og:title" content="FPGS: Flow-Free Prior-Guided 3D Gaussian Splatting">
-  <meta property="og:description" content="A fixed-geometry Gaussian mapping framework for endoscopic surgical scene reconstruction.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/method-overview.webp">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="FPGS: Flow-Free Prior-Guided 3D Gaussian Splatting for Endoscopic Surgical Scene Reconstruction."
+  >
+
+  <meta
+    property="og:title"
+    content="FPGS: Flow-Free Prior-Guided 3D Gaussian Splatting"
+  >
+
+  <meta
+    property="og:description"
+    content="A fixed-geometry Gaussian mapping framework for endoscopic surgical scene reconstruction."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:image"
+    content="assets/images/method-overview.webp"
+  >
+
   <title>FPGS | Project Page</title>
-  <link rel="stylesheet" href="assets/style.css?v=4">
+
+  <!-- 修改版本号可避免浏览器继续加载旧 CSS -->
+  <link
+    rel="stylesheet"
+    href="assets/style.css?v=10"
+  >
 </head>
+
 <body>
-  <header class="paper-header" id="top">
+
+  <!-- =========================================================
+       Header
+       ========================================================= -->
+
+  <header
+    class="paper-header"
+    id="top"
+  >
+
     <div class="hero-content">
 
-      <h1>
-        <span>FPGS: Flow-Free Prior-Guided 3D Gaussian Splatting</span>
-        <span>for Endoscopic Surgical Scene Reconstruction</span>
+      <h1 class="paper-title">
+        <span>
+          FPGS: Flow-Free Prior-Guided
+          <span class="title-3d">3D</span>
+          Gaussian Splatting
+        </span>
+
+        <span>
+          for Endoscopic Surgical Scene Reconstruction
+        </span>
       </h1>
 
       <div class="authors">
+
         <div class="author-row">
-          <span class="author-name">Peng Zhang<span class="orcid-badge">iD</span><sup>1</sup></span>,
-          <span class="author-name">Eksan Firkat<span class="orcid-badge">iD</span><sup>2,3</sup></span>,
-          <span class="author-name">Bin Zhu<span class="orcid-badge">iD</span><sup>4</sup></span>
+
+          <span class="author-name">
+            Peng Zhang<span class="orcid-badge">iD</span><sup>1</sup>
+          </span>,
+
+          <span class="author-name">
+            Eksan Firkat<span class="orcid-badge">iD</span><sup>2,3</sup>
+          </span>,
+
+          <span class="author-name">
+            Bin Zhu<span class="orcid-badge">iD</span><sup>4</sup>
+          </span>
+
         </div>
+
         <div class="author-row">
-          <span class="author-name">Jihong Zhu<span class="orcid-badge">iD</span><sup>5</sup></span>,
+
+          <span class="author-name">
+            Jihong Zhu<span class="orcid-badge">iD</span><sup>5</sup>
+          </span>,
+
           <em>Member, IEEE</em>,
+
           and
-          <span class="author-name">Askar Hamdulla<span class="orcid-badge">iD</span><sup>1*</sup></span>,
+
+          <span class="author-name">
+            Askar Hamdulla<span class="orcid-badge">iD</span><sup>1*</sup>
+          </span>,
+
           <em>Member, IEEE</em>
+
         </div>
+
       </div>
 
       <div class="affiliations">
-        <div>
-          <span><sup>1</sup>Xinjiang University</span>
-          <span><sup>2</sup>Tsinghua Shenzhen International Graduate School</span>
-          <span><sup>3</sup>Great Bay University</span>
+
+        <div class="affiliation-row">
+
+          <span>
+            <sup>1</sup>Xinjiang University
+          </span>
+
+          <span>
+            <sup>2</sup>Tsinghua Shenzhen International Graduate School
+          </span>
+
+          <span>
+            <sup>3</sup>Great Bay University
+          </span>
+
         </div>
-        <div>
-          <span><sup>4</sup>Beijing Tsinghua Institute for Frontier Interdisciplinary Innovation</span>
-          <span><sup>5</sup>Tsinghua University</span>
+
+        <div class="affiliation-row">
+
+          <span>
+            <sup>4</sup>Beijing Tsinghua Institute for Frontier Interdisciplinary Innovation
+          </span>
+
+          <span>
+            <sup>5</sup>Tsinghua University
+          </span>
+
         </div>
+
       </div>
 
       <div class="links">
-        <a class="pill dark"
-           href="assets/FPGS_paper_draft.pdf"
-           target="_blank"
-           rel="noopener">
-          <span class="button-icon">▣</span> Paper
+
+        <!--
+          当前仓库中不要放置 assets/FPGS.pdf。
+          点击后会进入 GitHub Pages 404 页面。
+        -->
+        <a
+          class="pill dark"
+          href="assets/FPGS.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="button-icon">▣</span>
+          Paper
         </a>
 
-        <a class="pill blue"
-           href="https://github.com/jinlin04/FPGS"
-           target="_blank"
-           rel="noopener">
-          <span class="button-icon">●</span> Code
+        <a
+          class="pill blue"
+          href="https://github.com/jinlin04/FPGS"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="button-icon">●</span>
+          Code
         </a>
+
       </div>
 
     </div>
+
   </header>
 
+
+  <!-- =========================================================
+       Main Content
+       ========================================================= -->
+
   <main>
+
+    <!-- Abstract -->
+
     <section class="section white">
+
       <div class="container narrow">
+
         <h2>Abstract</h2>
+
         <div class="rule"></div>
+
         <p>
-          Endoscopic 3D reconstruction supports surgical navigation, intraoperative visualization,
-          and scene understanding. Recent surgical 3D Gaussian Splatting methods reduce the
-          dependence on SfM initialization, but often introduce optical-flow-driven pose estimation
-          into the reconstruction loop, coupling camera tracking with Gaussian mapping and increasing
-          computational cost.
+          Endoscopic 3D reconstruction supports surgical navigation,
+          intraoperative visualization, and scene understanding. Recent
+          surgical 3D Gaussian Splatting methods reduce the dependence on
+          SfM initialization, but often introduce optical-flow-driven pose
+          estimation into the reconstruction loop, coupling camera tracking
+          with Gaussian mapping and increasing computational cost.
         </p>
+
         <p>
-          We present <strong>FPGS</strong>, a fixed-geometry Gaussian mapping framework for
-          endoscopic surgical scene reconstruction. Camera poses and intrinsics are estimated by an
-          upstream geometry module and then fixed in the reconstruction backend. A first-frame depth
-          prior is used only for Gaussian initialization, while subsequent mapping is driven by RGB
-          photometric supervision. Optical-flow supervision, projection-flow loss, persistent depth
-          supervision, and online pose refinement are removed from the reconstruction backend.
+          We present <strong>FPGS</strong>, a fixed-geometry Gaussian mapping
+          framework for endoscopic surgical scene reconstruction. Camera
+          poses and intrinsics are estimated by an upstream geometry module
+          and then fixed in the reconstruction backend. A first-frame depth
+          prior is used only for Gaussian initialization, while subsequent
+          mapping is driven by RGB photometric supervision. Optical-flow
+          supervision, projection-flow loss, persistent depth supervision,
+          and online pose refinement are removed from the reconstruction
+          backend.
         </p>
+
         <p>
-          On nine SCARED scenes, FPGS improves PSNR by <strong>2.62 dB</strong> and SSIM by
-          <strong>0.086</strong>, while reducing LPIPS by <strong>0.092</strong> compared with
-          Free-SurGS under the fixed-geometry setting. Training time is reduced by
-          <strong>66.7%</strong>, peak GPU memory by <strong>44.0%</strong>, and rendering speed is
-          increased by <strong>33.7%</strong>.
+          On nine SCARED scenes, FPGS improves PSNR by
+          <strong>2.62 dB</strong> and SSIM by <strong>0.086</strong>, while
+          reducing LPIPS by <strong>0.092</strong> compared with Free-SurGS
+          under the fixed-geometry setting. Training time is reduced by
+          <strong>66.7%</strong>, peak GPU memory by <strong>44.0%</strong>,
+          and rendering speed is increased by <strong>33.7%</strong>.
         </p>
 
         <figure class="main-figure">
-          <img src="assets/images/problem-setting.webp" alt="Problem setting comparison">
+
+          <img
+            src="assets/images/problem-setting.webp"
+            alt="Comparison between flow-driven reconstruction and FPGS"
+          >
+
           <figcaption>
-            Problem setting under different camera-geometry assumptions. Flow-driven reconstruction
-            couples pose estimation with Gaussian mapping, whereas FPGS uses fixed external geometry.
+            Problem setting under different camera-geometry assumptions.
+            Flow-driven reconstruction couples pose estimation with Gaussian
+            mapping, whereas FPGS uses fixed external geometry.
           </figcaption>
+
         </figure>
 
-        <p class="keywords"><strong>Keywords:</strong> Endoscopic scene reconstruction, 3D Gaussian
-        Splatting, external geometry, flow-free reconstruction, fixed-geometry mapping.</p>
+        <p class="keywords">
+          <strong>Keywords:</strong>
+          Endoscopic scene reconstruction, 3D Gaussian Splatting,
+          external geometry, flow-free reconstruction,
+          fixed-geometry mapping.
+        </p>
+
       </div>
+
     </section>
 
+
+    <!-- Motivation -->
+
     <section class="section gray">
+
       <div class="container">
+
         <h2>Motivation &amp; Design Choice</h2>
+
         <div class="rule"></div>
 
         <div class="cards">
+
           <article>
+
             <h3>Coupled Tracking and Mapping</h3>
-            <p>Flow-driven pipelines estimate camera motion inside the reconstruction loop, coupling pose optimization with Gaussian scene optimization.</p>
+
+            <p>
+              Flow-driven pipelines estimate camera motion inside the
+              reconstruction loop, coupling pose optimization with Gaussian
+              scene optimization.
+            </p>
+
           </article>
+
           <article>
+
             <h3>Redundant Geometry Optimization</h3>
-            <p>When stable external poses and calibrated intrinsics are already available, repeatedly optimizing camera geometry may be unnecessary.</p>
+
+            <p>
+              When stable external poses and calibrated intrinsics are
+              already available, repeatedly optimizing camera geometry may
+              be unnecessary.
+            </p>
+
           </article>
+
           <article>
+
             <h3>Persistent Auxiliary Supervision</h3>
-            <p>Optical flow, projection flow, and depth supervision enlarge the optimization loop and increase memory and preprocessing cost.</p>
+
+            <p>
+              Optical flow, projection flow, and depth supervision enlarge
+              the optimization loop and increase memory and preprocessing
+              cost.
+            </p>
+
           </article>
+
           <article>
+
             <h3>Clinical Engineering Setting</h3>
-            <p>Robot kinematics, external tracking, or upstream geometry estimation can provide fixed camera geometry to the reconstruction backend.</p>
+
+            <p>
+              Robot kinematics, external tracking, or upstream geometry
+              estimation can provide fixed camera geometry to the
+              reconstruction backend.
+            </p>
+
           </article>
+
         </div>
 
         <div class="statement">
+
           <strong>Research question.</strong>
-          When stable external geometry is available, is flow-driven online pose optimization still
-          necessary for the endoscopic 3DGS reconstruction backend?
+
+          When stable external geometry is available, is flow-driven online
+          pose optimization still necessary for the endoscopic 3DGS
+          reconstruction backend?
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- Framework -->
+
     <section class="section white">
+
       <div class="container">
+
         <h2>FPGS Framework</h2>
+
         <div class="rule"></div>
 
         <figure class="main-figure full">
-          <img src="assets/images/method-overview.webp" alt="FPGS method overview">
+
+          <img
+            src="assets/images/method-overview.webp"
+            alt="Overview of the FPGS framework"
+          >
+
           <figcaption>
-            Overview of FPGS. External camera geometry is fixed, the first-frame depth prior is used
-            only for initialization, and subsequent reconstruction is performed by RGB-only Gaussian mapping.
+            Overview of FPGS. External camera geometry is fixed, the
+            first-frame depth prior is used only for initialization, and
+            subsequent reconstruction is performed by RGB-only Gaussian
+            mapping.
           </figcaption>
+
         </figure>
 
         <div class="method-text">
+
           <p>
-            <strong>Camera geometry estimation.</strong> Camera poses and intrinsics are obtained from
-            an upstream geometry module. They are treated as fixed inputs and are not included in the
-            optimization variables of the reconstruction backend.
+            <strong>Camera geometry estimation.</strong>
+            Camera poses and intrinsics are obtained from an upstream
+            geometry module. They are treated as fixed inputs and are not
+            included in the optimization variables of the reconstruction
+            backend.
           </p>
+
           <p>
-            <strong>First-frame initialization.</strong> The first-frame depth prior is back-projected
-            with the fixed camera parameters to initialize Gaussian centers and appearance.
+            <strong>First-frame initialization.</strong>
+            The first-frame depth prior is back-projected with the fixed
+            camera parameters to initialize Gaussian centers and appearance.
           </p>
+
           <p>
-            <strong>RGB-only mapping.</strong> After initialization, only Gaussian position, scale,
-            rotation, opacity, and appearance are optimized using RGB photometric supervision.
+            <strong>RGB-only mapping.</strong>
+            After initialization, only Gaussian position, scale, rotation,
+            opacity, and appearance are optimized using RGB photometric
+            supervision.
           </p>
+
           <p>
-            <strong>Global refinement.</strong> Sampled frames refine the Gaussian scene while keeping
-            poses and intrinsics fixed. Tracking, flow-related losses, and depth supervision are not reintroduced.
+            <strong>Global refinement.</strong>
+            Sampled frames refine the Gaussian scene while keeping poses and
+            intrinsics fixed. Tracking, flow-related losses, and depth
+            supervision are not reintroduced.
           </p>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- Fixed-geometry optimization -->
+
     <section class="section gray">
+
       <div class="container">
+
         <h2>Fixed-Geometry RGB-Only Optimization</h2>
+
         <div class="rule"></div>
 
         <div class="two-column">
+
           <figure class="main-figure">
-            <img src="assets/images/rgb-mapping.webp" alt="RGB-only mapping">
-            <figcaption>Only Gaussian attributes are updated under fixed camera geometry.</figcaption>
+
+            <img
+              src="assets/images/rgb-mapping.webp"
+              alt="RGB-only Gaussian mapping under fixed camera geometry"
+            >
+
+            <figcaption>
+              Only Gaussian attributes are updated under fixed camera
+              geometry.
+            </figcaption>
+
           </figure>
+
           <div class="comparison-box">
+
             <table>
+
               <thead>
-                <tr><th>Aspect</th><th>Flow-driven</th><th>FPGS</th></tr>
+
+                <tr>
+                  <th>Aspect</th>
+                  <th>Flow-driven</th>
+                  <th>FPGS</th>
+                </tr>
+
               </thead>
+
               <tbody>
-                <tr><td>Camera poses</td><td>Optimized</td><td><strong>Fixed</strong></td></tr>
-                <tr><td>Tracking</td><td>Included</td><td><strong>Removed</strong></td></tr>
-                <tr><td>Optical flow</td><td>Included</td><td><strong>Removed</strong></td></tr>
-                <tr><td>Mapping loss</td><td>RGB + depth</td><td><strong>RGB only</strong></td></tr>
-                <tr><td>Optimized parameters</td><td>Pose + Gaussian</td><td><strong>Gaussian only</strong></td></tr>
+
+                <tr>
+                  <td>Camera poses</td>
+                  <td>Optimized</td>
+                  <td><strong>Fixed</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Tracking</td>
+                  <td>Included</td>
+                  <td><strong>Removed</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Optical flow</td>
+                  <td>Included</td>
+                  <td><strong>Removed</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Mapping loss</td>
+                  <td>RGB + depth</td>
+                  <td><strong>RGB only</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Optimized parameters</td>
+                  <td>Pose + Gaussian</td>
+                  <td><strong>Gaussian only</strong></td>
+                </tr>
+
               </tbody>
+
             </table>
+
             <p>
-              The reformulation does not introduce a new pose network or a new Gaussian representation.
-              It simplifies the reconstruction backend by decoupling camera tracking from Gaussian mapping.
+              The reformulation does not introduce a new pose network or a
+              new Gaussian representation. It simplifies the reconstruction
+              backend by decoupling camera tracking from Gaussian mapping.
             </p>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- Reconstruction quality -->
+
     <section class="section white">
+
       <div class="container">
+
         <h2>Reconstruction Quality</h2>
+
         <div class="rule"></div>
 
         <div class="metrics">
-          <div><strong>27.23</strong><span>PSNR ↑</span><small>+2.62 dB</small></div>
-          <div><strong>0.789</strong><span>SSIM ↑</span><small>+0.086</small></div>
-          <div><strong>0.190</strong><span>LPIPS ↓</span><small>−0.092</small></div>
+
+          <div>
+            <strong>27.23</strong>
+            <span>PSNR ↑</span>
+            <small>+2.62 dB</small>
+          </div>
+
+          <div>
+            <strong>0.789</strong>
+            <span>SSIM ↑</span>
+            <small>+0.086</small>
+          </div>
+
+          <div>
+            <strong>0.190</strong>
+            <span>LPIPS ↓</span>
+            <small>−0.092</small>
+          </div>
+
         </div>
 
         <figure class="main-figure full">
-          <img src="assets/images/qualitative-main.webp" alt="Qualitative comparison">
-          <figcaption>Qualitative comparison with representative methods on the SCARED dataset.</figcaption>
+
+          <img
+            src="assets/images/qualitative-main.webp"
+            alt="Qualitative comparison with representative reconstruction methods"
+          >
+
+          <figcaption>
+            Qualitative comparison with representative methods on the
+            SCARED dataset.
+          </figcaption>
+
         </figure>
 
         <figure class="main-figure full">
-          <img src="assets/images/qualitative-freesurgs.webp" alt="Free-SurGS comparison">
-          <figcaption>Detailed comparison between Free-SurGS and FPGS on representative scenes.</figcaption>
+
+          <img
+            src="assets/images/qualitative-freesurgs.webp"
+            alt="Qualitative comparison between Free-SurGS and FPGS"
+          >
+
+          <figcaption>
+            Detailed comparison between Free-SurGS and FPGS on
+            representative scenes.
+          </figcaption>
+
         </figure>
+
       </div>
+
     </section>
 
+
+    <!-- Efficiency -->
+
     <section class="section gray">
+
       <div class="container">
+
         <h2>Efficiency</h2>
+
         <div class="rule"></div>
 
         <div class="metrics efficiency-metrics">
-          <div><strong>0.4 h</strong><span>Training time ↓</span><small>−66.7%</small></div>
-          <div><strong>91.26</strong><span>Rendering FPS ↑</span><small>+33.7%</small></div>
-          <div><strong>1.4 GB</strong><span>Peak GPU memory ↓</span><small>−44.0%</small></div>
+
+          <div>
+            <strong>0.4 h</strong>
+            <span>Training time ↓</span>
+            <small>−66.7%</small>
+          </div>
+
+          <div>
+            <strong>91.26</strong>
+            <span>Rendering FPS ↑</span>
+            <small>+33.7%</small>
+          </div>
+
+          <div>
+            <strong>1.4 GB</strong>
+            <span>Peak GPU memory ↓</span>
+            <small>−44.0%</small>
+          </div>
+
         </div>
 
         <figure class="main-figure medium">
-          <img src="assets/images/efficiency.webp" alt="Efficiency comparison">
-          <figcaption>Scene-wise training time, rendering speed, and peak memory comparison.</figcaption>
+
+          <img
+            src="assets/images/efficiency.webp"
+            alt="Efficiency comparison between reconstruction methods"
+          >
+
+          <figcaption>
+            Scene-wise training time, rendering speed, and peak memory
+            comparison.
+          </figcaption>
+
         </figure>
+
       </div>
+
     </section>
+
+
+    <!-- Conclusion -->
 
     <section class="section white">
+
       <div class="container narrow">
+
         <h2>Conclusion</h2>
+
         <div class="rule"></div>
+
         <p>
-          FPGS reformulates flow-driven tracking-and-mapping as fixed-geometry Gaussian mapping for
-          endoscopic surgical scene reconstruction. Stable external camera geometry is treated as an
-          input rather than an optimization variable. The depth prior is restricted to first-frame
-          initialization, and all subsequent mapping is performed using RGB photometric supervision.
+          FPGS reformulates flow-driven tracking-and-mapping as
+          fixed-geometry Gaussian mapping for endoscopic surgical scene
+          reconstruction. Stable external camera geometry is treated as an
+          input rather than an optimization variable. The depth prior is
+          restricted to first-frame initialization, and all subsequent
+          mapping is performed using RGB photometric supervision.
         </p>
+
         <p>
-          The results indicate that, under the considered fixed-geometry setting, online
-          optical-flow-driven pose optimization is not mandatory for the reconstruction backend.
-          This design improves the quality–efficiency trade-off without introducing a new pose
+          The results indicate that, under the considered fixed-geometry
+          setting, online optical-flow-driven pose optimization is not
+          mandatory for the reconstruction backend. This design improves
+          the quality–efficiency trade-off without introducing a new pose
           network or a new 3D Gaussian representation.
         </p>
+
       </div>
+
     </section>
+
+
+    <!-- Funding -->
 
     <section class="section white funding">
+
       <div class="container narrow">
+
         <h2>Funding &amp; Acknowledgments</h2>
+
         <div class="rule"></div>
+
         <p>
-          This work was supported by the National Natural Science Foundation of China under Grant
-          62541328 and the Tianshan Talents Program under Grant 2024TSYCLJ0002.
+          This work was supported by the National Natural Science Foundation
+          of China under Grant 62541328 and the Tianshan Talents Program
+          under Grant 2024TSYCLJ0002.
         </p>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- =========================================================
+       Footer
+       ========================================================= -->
+
   <footer>
+
     FPGS Project Page © 2026 · Code available at
-    <a href="https://github.com/jinlin04/FPGS">GitHub</a>.
+
+    <a
+      href="https://github.com/jinlin04/FPGS"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </a>.
+
   </footer>
 
-  <script src="assets/script.js"></script>
 </body>
+
 </html>
