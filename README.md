@@ -94,6 +94,8 @@ Representative reconstruction results on the SCARED dataset.
 <p align="center">
 <img src="assets/images/reconstruction-s01.webp" width="48%">
 <img src="assets/images/reconstruction-s03.webp" width="48%">
+<img src="assets/images/reconstruction-s06.webp" width="48%">
+<img src="assets/images/reconstruction-s09.webp" width="48%">
 </p>
 
 
