@@ -87,6 +87,31 @@ python train.py \
 
 
 
+## Reconstruction Results
+
+Representative reconstruction results on the SCARED dataset.
+
+### Scene S01
+
+<p align="center">
+<img src="assets/images/reconstruction-s01.webp" width="90%">
+</p>
+
+
+### Scene S03
+
+<p align="center">
+<img src="assets/images/reconstruction-s03.webp" width="90%">
+</p>
+
+
+### Scene S06
+
+<p align="center">
+<img src="assets/images/reconstruction-s06.webp" width="90%">
+</p>
+
+
 
 ## Visualization
 
