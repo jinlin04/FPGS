@@ -21,23 +21,11 @@ Unlike joint tracking-and-mapping pipelines, FPGS treats external camera geometr
 
 ## Installation
 
-
-Our code is tested on:
-
-- Ubuntu 22.04
-- Python 3.10
-- PyTorch 2.x
-- CUDA 11.x / 12.x
-
-
-Create the environment and install dependencies:
-
+Our code is tested on Ubuntu 22.04 + CUDA 12.x + PyTorch 2.x.
 
 ```bash
 conda create -n fpgs python=3.10
-
 conda activate fpgs
-
 pip install -r requirements.txt
 ```
 
@@ -45,8 +33,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-
-We evaluate FPGS on the SCARED dataset.
+We evaluate FPGS on two public endoscopic datasets: SCARED and StereoMIS.
 
 
 
@@ -67,7 +54,6 @@ python train.py \
 ```
 
 
-After training, the checkpoints and rendered results will be saved in the specified output directory.
 
 
 
