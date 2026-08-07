@@ -89,7 +89,7 @@ python train.py \
 
 ## Reconstruction Results
 
-Representative reconstruction results on the SCARED dataset.
+Qualitative reconstruction results on the SCARED dataset.
 
 <p align="center">
 <img src="assets/images/reconstruction-s01.webp" width="48%">
