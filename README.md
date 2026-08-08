@@ -101,7 +101,9 @@ The reconstructed 3D Gaussian scene can be visualized using the provided visuali
 
 
 
-https://github.com/user-attachments/assets/bb3ad60f-8be4-41fc-832b-4a0712001d2b
+https://github.com/user-attachments/assets/517a030d-e422-418a-bf4e-fc86dbb4528c
+
+
 
 
 
