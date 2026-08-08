@@ -99,11 +99,13 @@ The reconstructed 3D Gaussian scene can be visualized using the provided visuali
 
 ### Demo Video
 
-<p align="center">
-  <video width="90%" controls>
-    <source src="https://github.com/jinlin04/FPGS/raw/main/assets/demo.mp4" type="video/mp4">
-  </video>
-</p>
+
+
+https://github.com/user-attachments/assets/56501941-1adc-46bb-a46d-6c5a1cacc9f8
+
+
+
+
 
 ## Acknowledgement
 
