@@ -97,15 +97,13 @@ The reconstructed 3D Gaussian scene can be visualized using the provided visuali
 </p>
 
 
-Demo video:
-
+### Demo Video
 
 <p align="center">
-<video width="90%" controls>
-<source src="assets/demo.mp4" type="video/mp4">
-</video>
+  <a href="assets/demo.mp4">
+    <img src="assets/images/visualization.webp" width="80%">
+  </a>
 </p>
-
 
 
 ## Acknowledgement
