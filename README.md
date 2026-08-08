@@ -93,7 +93,7 @@ The reconstructed 3D Gaussian scene can be visualized using the provided visuali
 
 
 <p align="center">
-<img src="assets/images/visualization.webp" width="90%">
+<img src="assets/images/visualization.webp" width="95%">
 </p>
 
 
@@ -101,7 +101,10 @@ The reconstructed 3D Gaussian scene can be visualized using the provided visuali
 
 
 
-https://github.com/user-attachments/assets/56501941-1adc-46bb-a46d-6c5a1cacc9f8
+
+https://github.com/user-attachments/assets/1fb2f9a0-c456-4695-a653-a8493d4c156c
+
+
 
 
 
